@@ -11,8 +11,10 @@ public class UserAction {
     
     @PostMapping(value ="userLogin")
     public String userLogin(@PathVariable("username") String username,@PathVariable("username") String password) {
-        
-        
         return "username"+ username + "<br>password"+password;
+    }
+    
+    public String oo() {
+        return "";
     }
 }
