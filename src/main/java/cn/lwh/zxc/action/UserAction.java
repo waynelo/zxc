@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("user")
 public class UserAction {
     
-    @PostMapping(value ="userLogin")
+    @PostMapping(value ="userLoginnihaoa")
     public String userLogin(@PathVariable("username") String username,@PathVariable("username") String password) {
         
         
