@@ -1,2 +1,0 @@
-user = luoweihong
-password = 123123
