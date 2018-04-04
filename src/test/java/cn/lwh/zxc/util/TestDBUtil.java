@@ -1,6 +1,7 @@
 package cn.lwh.zxc.util;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class TestDBUtil extends TestSupport{
     
     @Test
     public void getasTest() throws IOException {
-        DBUtil db = (DBUtil) super.getBean("DBUtil");
-        db.getas();
+        Date usermapper =  super.getBean2(Date.class);
+        System.out.println(usermapper);
     }
 }

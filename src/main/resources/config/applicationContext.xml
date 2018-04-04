@@ -15,9 +15,7 @@
         <context:annotation-config/>
         <context:component-scan base-package="cn.lwh.zxc"/>
         
-        <!-- <bean id="oop" class="cn.lwh.zxc.Oop">
-            <property name="message" value="niahoa"></property>
-        </bean> -->
+        <bean id="date" class="java.util.Date"></bean>
         
         <!-- <aop:config>
             <aop:aspect id="myFirstAop" ref="">
@@ -25,4 +23,7 @@
             </aop:aspect>
             <aop:pointcut expression="" id=""/>
         </aop:config> -->
+        
+        <!-- spring-myBatis的配置文件 -->
+        <import resource="classpath:config/spring-mybatis.xml" />
 </beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lwh.zxc.dao.UserDao">
+    
+    <resultMap type="cn.lwh.zxc.pojo.UserDO" id="userResult">
+        <id column="ID" property="id" />   
+        <result column="username" property="username" />       
+        <result column="password" property="password" />       
+        <result column="create_datatime" property="createDatatime" />       
+        <result column="last_login_datatime" property="lastLoginDatatime" />       
+        <result column="gender" property="gender" javaType="String" />       
+        <result column="is_deleted" property="deleted" javaType="boolean" />       
+    </resultMap>
+
+   <select id="getUserByUsernameAndPassword" parameterType="cn.lwh.zxc.pojo.UserDO" resultMap="userResult">
+        SELECT 
+            t.id
+	        ,t.username
+	        ,t.password
+	        ,t.create_datatime
+	        ,t.gender
+	        ,t.last_login_datatime 
+        FROM USER t 
+        WHERE t.is_deleted = 0
+        <if test="null!= username and ''!= username">
+            and username = #{username}
+        </if>
+        <if test="null!= password and ''!= password">
+            and password = #{password}
+        </if>
+   </select>
+   
+   <select id="getUserByUserId" parameterType="Integer" resultMap="userResult">
+        SELECT 
+            t.id
+            ,t.username
+            ,t.password
+            ,t.create_datatime
+            ,t.gender
+            ,t.last_login_datatime 
+            ,is_deleted
+        FROM USER t
+        where t.is_deleted = 0
+        <if test="null != _parameter and  _parameter >= 0">
+            and id = #{_parameter}
+        </if>
+   </select>
+		
+</mapper>

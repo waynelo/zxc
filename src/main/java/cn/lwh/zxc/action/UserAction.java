@@ -14,7 +14,4 @@ public class UserAction {
         return "username"+ username + "<br>password"+password;
     }
     
-    public String oo() {
-        return "";
-    }
 }

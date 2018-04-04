@@ -2,8 +2,6 @@ package cn.lwh.zxc.util;
 
 import java.io.IOException;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 
 /**

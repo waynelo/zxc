@@ -12,21 +12,27 @@ import cn.lwh.zxc.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
     
-    @Autowired
-    private List<UserDao> userDao;
+ //   @Autowired
+    private UserDao userDao;
     
-/*    public User login(User user) {
-        return userDao.login(user);
-    }*/
-    
-    public String name() {
-        
-        
-        return Integer.toString(userDao.size());
-    }
-
     public UserDO login(UserDO user) {
-        return null;
+        List<UserDO> list = userDao.getUserByUsernameAndPassword(user);
+        if(null != list && list.size() > 0) {
+            return list.get(0);
+        }else {
+            return null;
+        }
+        
+        
+        
     }
     
+    public UserDO getUser(int id) {
+        List<UserDO> list = userDao.getUserByUserId(id);
+        if(null != list && list.size() > 0) {
+            return list.get(0);
+        }else {
+            return null;
+        }
+    }
 }
