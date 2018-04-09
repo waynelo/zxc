@@ -12,7 +12,7 @@ import cn.lwh.zxc.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
     
- //   @Autowired
+    @Autowired
     private UserDao userDao;
     
     public UserDO login(UserDO user) {
@@ -22,9 +22,6 @@ public class UserServiceImpl implements UserService{
         }else {
             return null;
         }
-        
-        
-        
     }
     
     public UserDO getUser(int id) {
