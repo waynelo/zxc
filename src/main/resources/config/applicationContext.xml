@@ -13,7 +13,12 @@
        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
        
         <context:annotation-config/>
-        <context:component-scan base-package="cn.lwh.zxc"/>
+        
+        <!-- 扫描@component注解的范围（包括@component的子注解，@Service，@Reposity，@Controller），这里扫描的是cn.lwh.zxc包下的所有类 -->
+        <context:component-scan base-package="cn.lwh.zxc">
+            <!-- 为了避免和springmvc扫描重合，spring不扫描@Controller -->
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        </context:component-scan>
         
         <bean id="date" class="java.util.Date"></bean>
         

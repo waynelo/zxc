@@ -18,7 +18,6 @@ public class UserAction {
 
     @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     public String userLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
-        System.out.println("asdasdasdasddasfasd***********88");
         UserDO user = new UserDO();
         user.setUsername(username);
         user.setPassword(password);
@@ -28,7 +27,6 @@ public class UserAction {
         }else {
             return "用户不存在";
         }
-        
     }
     
 }
