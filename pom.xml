@@ -16,8 +16,8 @@
     <!-- spring版本号 -->
     <spring.version>4.3.7.RELEASE</spring.version>
     <!-- log4j日志文件管理包版本 -->
-    <slf4j.version>1.7.25</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
+    <slf4j.version>1.7.25</slf4j.version>
     <!-- mybatis版本号 -->
     <mybatis.version>3.4.1</mybatis.version>
     
@@ -143,6 +143,14 @@
 	    <version>${slf4j.version}</version>
 	</dependency>
 	
+	<!-- slf4j-log4j12 （整合slf4j和log4j需要用到的包）-->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+		<version>${slf4j.version}</version>
+    </dependency>
+    
+    
 	<!-- 数据库链接池commons-dbcp -->
 	<dependency>
 	    <groupId>commons-dbcp</groupId>
@@ -176,7 +184,7 @@
 				<scanIntervalSeconds>5</scanIntervalSeconds>
 				<!-- 指定端口号和主机，可不写 -->
 				<httpConnector>
-					<port>8080</port>
+					<port>8888</port>
 					<host>localhost</host>
 				</httpConnector>
 				<webApp>
